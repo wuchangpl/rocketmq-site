@@ -9,6 +9,8 @@ public class SimpleBatchProducer {
 
     public static void main(String[] args) throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer("BatchProducerGroupName");
+        // 设置NameServer地址
+        producer.setNamesrvAddr("localhost:9876");
         producer.start();
 
         //If you just send messages of no more than 1MiB at a time, it is easy to use batch
